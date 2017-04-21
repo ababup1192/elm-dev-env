@@ -1,6 +1,7 @@
 module Main exposing (..)
 
 import Html exposing (Html, div, text, program)
+import Hello
 
 -- Model
 type alias Model =
@@ -9,7 +10,7 @@ type alias Model =
 
 init : ( Model, Cmd Msg )
 init =
-    ( "Hello Elm!", Cmd.none )
+    ( Hello.hello, Cmd.none )
 
 
 
