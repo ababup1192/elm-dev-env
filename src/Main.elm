@@ -5,10 +5,9 @@ import Html.Attributes exposing (..)
 import Html.Events exposing (onInput)
 import Time exposing (Time, second)
 
+import Model exposing (..)
+import Operation exposing (..)
 
--- Model
-type alias Model =
-    { left: Int, right: Int, count: Int }
 
 init : ( Model, Cmd Msg )
 init =
@@ -50,40 +49,6 @@ subscriptions : Model -> Sub Msg
 subscriptions model =
     Time.every second Tick
 
-
-type Op
-  = Plus
-  | Minus
-  | Multi
-  | Divide
-
-calcNum : Model -> Int
-calcNum {left, right, count} =
-    let
-      op = toOp count
-    in
-      case op of
-        Plus   -> left +  right
-        Minus  -> left -  right
-        Multi  -> left *  right
-        Divide -> left // right
-
-toOp : Int -> Op
-toOp count =
-    case count % 4 of
-        0 -> Plus
-        1 -> Minus
-        2 -> Multi
-        3 -> Divide
-        _ -> Plus
-
-toOpText : Op -> String
-toOpText op =
-    case op of
-        Plus   -> "+"
-        Minus  -> "-"
-        Multi  -> "*"
-        Divide -> "/"
 
 -- Main
 main : Program Never Model Msg

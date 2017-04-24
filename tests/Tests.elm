@@ -5,13 +5,13 @@ import Test exposing (..)
 import TestExp exposing (..)
 
 -- Test target modules
-import Hello
+import Operation exposing (..)
 
 all : Test
 all =
-    describe "Hello module Test"
+    describe "Operation module Test"
     [
-      "hello" =>
-        Hello.hello === "Hello, Elm!"
+      "dummy" =>
+        True === True
     ]
 
