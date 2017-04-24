@@ -18,6 +18,7 @@
     "build": "webpack",
     "watch": "webpack --watch",
     "dev": "webpack-dev-server --port 3000",
-    "start": "nf start"
+    "start": "nf start",
+    "test": "elm-test"
   }
 }
