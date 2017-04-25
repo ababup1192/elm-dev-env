@@ -1,6 +1,6 @@
 module Operation exposing (..)
 
-import Model exposing (..)
+import Models exposing (Model)
 
 type Op
   = Plus
