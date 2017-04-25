@@ -11,9 +11,8 @@ import Operation exposing (..)
 
 -- View
 view : Model -> Html Msg
-view model =
+view ( { left, right, count } as model) =
     let
-        { left, right, count } = model
         leftText = toString left
         rightText = toString right
         op  = toOpText <| toOp <| count

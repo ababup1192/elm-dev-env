@@ -9,7 +9,7 @@ type Op
   | Divide
 
 calcNum : Model -> Int
-calcNum {left, right, count} =
+calcNum { left, right, count } =
     let
       op = toOp count
     in
