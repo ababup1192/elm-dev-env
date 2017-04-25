@@ -28,7 +28,7 @@ view model =
       [ input [ type_ "number", onInput Left ] [],
         p [] [ text (toOpText <| toOp <| model.count) ],
         input [ type_ "number", onInput Right ] [],
-        p [] [ text (toString (calcNum model) )]
+        p [] [ text (toString <| calcNum model) ]
       ]
 
 

@@ -8,17 +8,14 @@
     "elm-test": "^0.18.2",
     "elm-webpack-loader": "^4.3.0",
     "file-loader": "^0.11.1",
-    "foreman": "^2.0.0",
     "style-loader": "^0.16.1",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.2"
   },
   "scripts": {
-    "api": "node api.js",
     "build": "webpack",
     "watch": "webpack --watch",
-    "dev": "webpack-dev-server --port 3000",
-    "start": "nf start",
+    "start": "webpack-dev-server --port 3000",
     "test": "elm-test"
   }
 }
