@@ -1,0 +1,21 @@
+machine:
+  node:
+    version: 7.3.0
+
+    post:
+      - curl -o- -L https://yarnpkg.com/install.sh | bash
+      - npm install -g elm
+
+    dependencies:
+      cache_directories:
+        - "~/.yarn-cache"
+
+      pre:
+        - yarn --version
+
+      override:
+        - yarn install
+
+      test:
+        override:
+          - yarn test
