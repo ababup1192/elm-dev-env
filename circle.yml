@@ -4,16 +4,17 @@ machine:
 
     post:
       - curl -o- -L https://yarnpkg.com/install.sh | bash
-      - npm install -g elm
 
     dependencies:
       cache_directories:
+        - elm-stuff
         - "~/.yarn-cache"
 
       pre:
         - yarn --version
 
       override:
+        - npm install -g elm
         - yarn install
 
       test:
