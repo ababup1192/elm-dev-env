@@ -19,6 +19,12 @@ $ yarn start
 $ open http://localhost:3000/
 ```
 
+## Test
+
+```shell
+$ yarn test
+```
+
 ## Build
 
 ```shell
