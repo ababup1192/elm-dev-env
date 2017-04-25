@@ -18,7 +18,7 @@ view model =
         rightText = toString right
         op  = toOpText <| toOp <| count
         res = toString <| calcNum model
-           in
+    in
         div [ class "expression" ] 
         [ input [ type_ "number", value leftText, onInput Left   ] [],
           p [] [ text op ],
