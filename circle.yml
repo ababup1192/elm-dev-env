@@ -8,6 +8,7 @@ machine:
     dependencies:
       cache_directories:
         - elm-stuff
+        - "./tests/elm-stuff"
         - "~/.yarn-cache"
 
       pre:
