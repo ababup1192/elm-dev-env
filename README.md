@@ -1,33 +1,28 @@
 # Elm Develop Environment
 
 [![CircleCI](https://circleci.com/gh/ababup1192/elm-dev-env.svg?style=svg)](https://circleci.com/gh/ababup1192/elm-dev-env)
-
-## Require
-
-- [Elm(elm-make)](https://guide.elm-lang.org/install.html)
-
 ## Install
 
 ```shell
-$ yarn
+$ npm i
 ```
 
 ## Launch develop server
 
 ```shell
-$ yarn start
+$ npm start
 $ open http://localhost:3000/
 ```
 
 ## Test
 
 ```shell
-$ yarn test
+$ npm test
 ```
 
 ## Build
 
 ```shell
-$ yarn build
+$ npm run build
 $ open dist/index.html
 ```
