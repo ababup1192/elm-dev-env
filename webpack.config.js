@@ -23,7 +23,7 @@ module.exports = {
             {
                 test:    /\.elm$/,
                 exclude: [/elm-stuff/, /node_modules/],
-                use:  'elm-webpack?verbose=true&warn=true',
+                use:  'elm-webpack?verbose=true&warn=true&debug=true',
             },
         ],
 
