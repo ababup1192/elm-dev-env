@@ -37,6 +37,7 @@ module.exports = {
     devServer: {
         inline: true,
         stats: { colors: true },
+        open: "google chrome",
     },
 
 };
