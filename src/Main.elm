@@ -1,31 +1,55 @@
 module Main exposing (..)
 
-import Html exposing (program)
-import Time exposing (Time, second)
+import Html exposing (Html, text, div, h1, img)
+import Html.Attributes exposing (src)
 
-import Models exposing (initialModel, Model)
-import Messages exposing (..)
-import View exposing (view)
-import Update exposing (update)
+
+---- MODEL ----
+
+
+type alias Model =
+    {}
 
 
 init : ( Model, Cmd Msg )
 init =
-    ( initialModel, Cmd.none )
+    ( {}, Cmd.none )
 
 
--- Subscriptions
-subscriptions : Model -> Sub Msg
-subscriptions model =
-    Time.every second Tick
+
+---- UPDATE ----
 
 
--- Main
+type Msg
+    = NoOp
+
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    ( model, Cmd.none )
+
+
+
+---- VIEW ----
+
+
+view : Model -> Html Msg
+view model =
+    div []
+        [ img [ src "./src/logo.svg" ] []
+        , h1 [] [ text "Your Elm App is working!" ]
+        ]
+
+
+
+---- PROGRAM ----
+
+
 main : Program Never Model Msg
 main =
-    program
-    { init = init
-    , view = view
-    , update = update
-    , subscriptions = subscriptions
-    }
+    Html.program
+        { view = view
+        , init = init
+        , update = update
+        , subscriptions = always Sub.none
+        }

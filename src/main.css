@@ -3,26 +3,3 @@
 #main {
     padding: 20px;
 }  
-.expression {
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
-}
-
-.expression > input {
-    width: 100px;
-    background-color: rgba(147, 128, 108, 0.1);
-    color: #666666;
-    font: inherit;
-    font-weight: normal;
-}
-
-.expression > input:focus {
-    border:solid 3x #EEA34A;
-}
-
-.expression > p {
-    width: 20px;
-    font-size: 1.3em;
-}
-
