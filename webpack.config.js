@@ -1,43 +1,38 @@
 module.exports = {
-    entry: './src/index.js',
-
+    entry: `${__dirname}/src/index.js`,
     output: {
         path: `${__dirname}/dist`,
         filename: 'bundle.js',
+        libraryTarget: 'window',
     },
-
     module: {
         rules: [
             {
-                test: /\.(css|scss)$/,
-                use: [
-                    'style',
-                    'css',
-                ]
+                test: /\.(html)$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    context: '',
+                }
             },
             {
-                test:    /\.html$/,
-                exclude: /node_modules/,
-                use:  'file?name=[name].[ext]',
+                test: /\.(css|scss)$/,
+                loader: ['style-loader', 'css-loader'],
             },
             {
                 test:    /\.elm$/,
-                exclude: [/elm-stuff/, /node_modules/],
-                use:  'elm-webpack?verbose=true&warn=true&debug=true',
+                loader: 'elm-webpack-loader',
+                options: {
+                    warn: true,
+                    debug: true,
+                }
             },
         ],
-
-        noParse: /\.elm$/,
     },
-
-    resolveLoader: {
-        moduleExtensions: ["-loader"]
-    },
-
-    devServer: {
-        inline: true,
-        stats: { colors: true },
-        open: "google chrome",
-    },
-
+    mode: process.env.WEBPACK_SERVE ? 'development' : 'production',
+    serve: {
+      contentBase: `${__dirname}/dist`,
+      port: '8080',
+      open: true,
+    }
 };

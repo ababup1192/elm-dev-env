@@ -3,24 +3,21 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "dependencies": {
+  "dependencies": {},
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-serve",
+    "test": "elm-test"
+  },
+  "devDependencies": {
     "css-loader": "^0.28.10",
     "elm": "^0.18.0",
     "elm-test": "^0.18.12",
     "elm-webpack-loader": "^4.5.0",
     "file-loader": "^1.1.11",
-    "sanitize.css": "^5.0.0",
-    "style-loader": "^0.20.2",
-    "webpack": "^3.11.0"
-  },
-  "scripts": {
-    "build": "webpack",
-    "watch": "webpack --watch",
-    "start": "webpack-dev-server --port 3000",
-    "test": "elm-test"
-  },
-  "devDependencies": {
-    "webpack-cli": "^2.0.10",
-    "webpack-dev-server": "^2.11.2"
+    "style-loader": "^0.20.3",
+    "webpack": "^4.15.1",
+    "webpack-serve": "^1.0.4",
+    "webpack-cli": "^2.1.5"
   }
 }
