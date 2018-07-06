@@ -1,3 +1,5 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
 module.exports = {
     entry: `${__dirname}/src/index.js`,
     output: {
@@ -7,14 +9,6 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.(html)$/,
-                loader: 'file-loader',
-                options: {
-                    name: '[name].[ext]',
-                    context: '',
-                }
-            },
             {
                 test: /\.(css|scss)$/,
                 loader: ['style-loader', 'css-loader'],
@@ -29,6 +23,12 @@ module.exports = {
             },
         ],
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'Elm app',
+            template: `${__dirname}/src/index.html`,
+        })
+    ],
     mode: process.env.WEBPACK_SERVE ? 'development' : 'production',
     serve: {
       contentBase: `${__dirname}/dist`,
