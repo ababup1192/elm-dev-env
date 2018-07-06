@@ -1,27 +1,6 @@
 # .circleci/config.yml for CircleCI 2.0
 version: 2
 jobs:
-  node6:
-    docker:
-      - image: circleci/node:6
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-          - v6-dependencies-{{ checksum "package.json" }}-{{ checksum "elm-package.json" }}
-          - v6-dependencies-
-      - run: ./scripts/ci/ensure_libsysconfcpus.sh
-      - run: npm install
-      - run: ./scripts/ci/replace_elm_make.sh 1
-      - run: npm test
-      - save_cache:
-          paths:
-            - sysconfcpus
-            - node_modules
-            - elm-stuff
-            - tests/elm-stuff
-          key: v6-dependencies-{{ checksum "package.json" }}-{{ checksum "elm-package.json" }}
   node8:
     docker:
       - image: circleci/node:8
@@ -48,5 +27,4 @@ workflows:
   version: 2
   build:
     jobs:
-      - node6
       - node8
