@@ -10,11 +10,7 @@ $ npm i
 ## Launch develop server
 
 ```shell
-$ npm start # open Google Chrome
-# Please set a browser for each OS.(webpack.config.js: DevServer)
-#   macOS: google chrome
-#   Linux: google-chrome
-#   Windows: chrome
+$ npm start
 ```
 
 ## Test
