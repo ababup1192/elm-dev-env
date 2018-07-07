@@ -1,4 +1,4 @@
-require('./main.css');
+require('./main.scss');
 
 const Elm = require('./Main.elm');
 const mountNode = document.getElementById('main');
