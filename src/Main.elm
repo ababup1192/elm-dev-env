@@ -1,7 +1,9 @@
-module Main exposing (..)
+module Main exposing (Model, Msg(..), init, main, update, view)
 
-import Html exposing (Html, text, div, h1, img)
+import Browser
+import Html exposing (Html, div, h1, img, text)
 import Html.Attributes exposing (src)
+
 
 
 ---- MODEL ----
@@ -11,8 +13,8 @@ type alias Model =
     {}
 
 
-init : ( Model, Cmd Msg )
-init =
+init : () -> ( Model, Cmd Msg )
+init _ =
     ( {}, Cmd.none )
 
 
@@ -41,15 +43,15 @@ view model =
         ]
 
 
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    Sub.none
 
----- PROGRAM ----
 
-
-main : Program Never Model Msg
 main =
-    Html.program
-        { view = view
-        , init = init
+    Browser.element
+        { init = init
         , update = update
-        , subscriptions = always Sub.none
+        , subscriptions = subscriptions
+        , view = view
         }

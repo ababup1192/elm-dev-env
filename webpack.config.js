@@ -17,8 +17,7 @@ module.exports = {
                 test:    /\.elm$/,
                 loader: 'elm-webpack-loader',
                 options: {
-                    warn: true,
-                    debug: true,
+                    debug: true
                 }
             },
         ],

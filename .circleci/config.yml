@@ -9,19 +9,15 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-          - v8-dependencies-{{ checksum "package.json" }}-{{ checksum "elm-package.json" }}
+          - v8-dependencies-{{ checksum "package.json" }}-{{ checksum "elm.json" }}
           - v8-dependencies-
-      - run: ./scripts/ci/ensure_libsysconfcpus.sh
       - run: npm install
-      - run: ./scripts/ci/replace_elm_make.sh 1
       - run: npm test
       - save_cache:
           paths:
-            - sysconfcpus
             - node_modules
             - elm-stuff
-            - tests/elm-stuff
-          key: v8-dependencies-{{ checksum "package.json" }}-{{ checksum "elm-package.json" }}
+          key: v8-dependencies-{{ checksum "package.json" }}-{{ checksum "elm.json" }}
 
 workflows:
   version: 2
