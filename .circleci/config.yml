@@ -7,8 +7,18 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
+      - restore_cache:
+          keys:
+          - v8-dependencies-{{ checksum "package.json" }}-{{ checksum "elm.json" }}
+          - v8-dependencies-
       - run: npm install
       - run: npm test
+      - save_cache:
+          paths:
+            - node_modules
+            - elm-stuff
+          key: v8-dependencies-{{ checksum "package.json" }}-{{ checksum "elm.json" }}
+
 workflows:
   version: 2
   build:
