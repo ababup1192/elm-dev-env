@@ -6,7 +6,7 @@
   "dependencies": {},
   "scripts": {
     "build": "webpack",
-    "start": "webpack-serve",
+    "start": "webpack-dev-server",
     "test": "elm-test"
   },
   "devDependencies": {
@@ -21,6 +21,6 @@
     "url-loader": "^1.1.1",
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0",
-    "webpack-serve": "^2.0.2"
+    "webpack-dev-server": "^3.1.10"
   }
 }

@@ -33,9 +33,10 @@ module.exports = {
         })
     ],
     mode: process.env.WEBPACK_SERVE ? 'development' : 'production',
-    serve: {
-      contentBase: `${__dirname}/dist`,
+    devServer: {
       port: '8080',
-      open: true,
+      compress: true,
+      watchContentBase: true,
+      open: 'Google Chrome',
     }
 };
