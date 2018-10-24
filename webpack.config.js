@@ -17,7 +17,8 @@ module.exports = {
                 test:    /\.elm$/,
                 loader: 'elm-webpack-loader',
                 options: {
-                    debug: true
+                    debug: true,
+                    pathToElm: '.bin/unbuffered-elm-make'
                 }
             },
             {
